@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int is_prime(int n) {
+    if (n <= 1) {
+        return 0;
+    }
+    for (int i = 2; i <= n/2; i++) {
+        if (n % i == 0) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+int main() {
+    int n, count = 0, num = 2;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    printf("%d prime numbers are: ", n);
+    while (count < n) {
+        if (is_prime(num)) {
+            printf("%d ", num);
+            count++;
+        }
+        num++;
+    }
+    printf("\n%dth Prime number is %d\n", n, num-1);
+    printf("%d prime numbers after %d are: ", n, num-1);
+    count = 0;
+    while (count < n) {
+        if (is_prime(num)) {
+            printf("%d ", num);
+            count++;
+        }
+        num++;
+    }
+    printf("\n");
+    return 0;
+}
+OUTPUT:-
+Enter the value of n: 3
+3 prime numbers are: 2 3 5 
+3th Prime number is 5
+3 prime numbers after 5 are: 7 11 13 
