@@ -1,0 +1,33 @@
+#include <stdio.h>
+struct Date {
+    int day;
+    int month;
+    int year;
+};
+struct Student {
+    int id;
+    char name[50];
+    struct Date dob; // Nested structure for date of birth
+    float gpa;
+};
+
+int main() }
+    struct Student student1 = {
+        12345,
+        "John Doe",
+        {12, 3, 2000},
+        3.5
+    };
+    printf("Student ID: %d\n", student1.id);
+    printf("Student Name: %s\n", student1.name);
+    printf("Date of Birth: %d/%d/%d\n", student1.dob.day, student1.dob.month, student1.dob.year);
+    printf("GPA: %.2f\n", student1.gpa);
+
+    return 0;
+}
+
+OUTPUT
+Student ID: 12345
+Student Name: John Doe
+Date of Birth: 12/3/2000
+GPA: 3.50
