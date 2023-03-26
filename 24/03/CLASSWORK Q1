@@ -1,0 +1,63 @@
+#include <stdio.h>
+
+int main() {
+    float python, c_prog, math, physics, total, aggregate;
+    char grade;
+    
+    printf("Enter the marks in python: ");
+    scanf("%f", &python);
+    
+    printf("Enter the marks in c programming: ");
+    scanf("%f", &c_prog);
+    
+    printf("Enter the marks in Mathematics: ");
+    scanf("%f", &math);
+    
+    printf("Enter the marks in Physics: ");
+    scanf("%f", &physics);
+    
+    total = python + c_prog + math + physics;
+    aggregate = total / 4;
+    
+    if (aggregate >= 75) {
+        grade = 'D';
+    } else if (aggregate >= 60 && aggregate < 75) {
+        grade = 'F';
+    } else if (aggregate >= 50 && aggregate < 60) {
+        grade = 'S';
+    } else if (aggregate >= 40 && aggregate < 50) {
+        grade = 'T';
+    } else {
+        grade = 'F';
+    }
+    
+    printf("Total= %.0f\n", total);
+    printf("Aggregate= %.1f\n", aggregate);
+    
+    switch(grade) {
+        case 'D':
+            printf("DISTINCTION\n");
+            break;
+        case 'F':
+            printf("FIRST DIVISION\n");
+            break;
+        case 'S':
+            printf("SECOND DIVISION\n");
+            break;
+        case 'T':
+            printf("THIRD DIVISION\n");
+            break;
+        default:
+            printf("FAIL\n");
+    }
+    
+    return 0;
+}
+OUTPUT:-
+Enter the marks in python: 90
+Enter the marks in c programming: 91
+Enter the marks in Mathematics: 92
+Enter the marks in Physics: 93
+Total= 366
+Aggregate= 91.5
+DISTINCTION
