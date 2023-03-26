@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+struct Student {
+    int number;
+    char grade;
+};
+
+int main() {
+    int numStudents, numA = 0, numB = 0, numC = 0, numD = 0, numF = 0;
+    
+    printf("Enter No. Students: ");
+    scanf("%d", &numStudents);
+    
+    struct Student students[numStudents];
+    
+    for (int i = 0; i < numStudents; i++) {
+        printf("Enter student %d Number, Grade: ", i+1);
+        scanf("%d %c", &students[i].number, &students[i].grade);
+        
+        switch(students[i].grade) {
+            case 'A':
+                numA++;
+                break;
+            case 'B':
+                numB++;
+                break;
+            case 'C':
+                numC++;
+                break;
+            case 'D':
+                numD++;
+                break;
+            case 'F':
+                numF++;
+                break;
+            default:
+                printf("Invalid grade entered.\n");
+        }
+    }
+    
+    for (int i = 0; i < numStudents; i++) {
+        printf("Student %d details:\n", i+1);
+        printf("Number: %d\n", students[i].number);
+        printf("Grade: %c\n", students[i].grade);
+        printf("Total no. A: %d, B: %d, C: %d, D: %d, F: %d\n", numA, numB, numC, numD, numF);
+    }
+    
+    return 0;
+}
+Enter No. Students: 1
+Enter student 1 Number, Grade: 2001 A
+Student 1 details:
+Number: 2001
+Grade: A
+Total no. A: 1, B: 0, C: 0, D: 0, F: 0
